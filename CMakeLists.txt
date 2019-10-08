@@ -3,4 +3,4 @@ project(ps1)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(ps1 main.cpp Student.cpp Student.h)
+add_executable(ps1 main.cpp Student.cpp Student.h MyVector.cpp MyVector.h)

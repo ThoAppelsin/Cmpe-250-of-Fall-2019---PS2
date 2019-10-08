@@ -3,6 +3,7 @@
 #include <vector>
 
 #include "Student.h"
+#include "MyVector.h"
 
 void main1() {
     Student me {
@@ -41,16 +42,23 @@ void main2() {
     std::cout << &reference_to_me << std::endl;
 }
 
-void main3() {
+void main3(int);
+
+int main() {
+    MyVector<Student *> vec{};
+    vec.append(new Student{"Utkan", 26});
+    vec.append(new Student{"Ayse", 20});
+
+    std::cout << (*vec.get(0)).age << ' '
+        << vec.pop()->age<< ' '
+        << vec.get(0)->age << std::endl;
+
+    return 0;
+}
+
+void main3(int q) {
     static int i = 20;
 
     i++;
-    std::cout << i << std::endl;
-}
-
-int main() {
-    std::cout << Student::test(20) << std::endl;
-    main3();
-    main3();
-    return 0;
+    std::cout << i << q << std::endl;
 }
