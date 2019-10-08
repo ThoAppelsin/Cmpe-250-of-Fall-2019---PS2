@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(ps1)
+project(ps2)
 
 set(CMAKE_CXX_STANDARD 14)
 
