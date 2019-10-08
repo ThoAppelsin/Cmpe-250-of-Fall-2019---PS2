@@ -5,7 +5,7 @@
 #ifndef PS1_MYVECTOR_H
 #define PS1_MYVECTOR_H
 
-#include <cstddef>
+#include <stdexcept>
 
 // template <typename T>
 template <class T>
@@ -14,6 +14,8 @@ private:
     int size;
     T * storage;
     int last_element;
+
+    // Template function definitions should stay in .h file!
     void expand(int newsize) {
         T * newstorage = new T[newsize];
         for (int i = 0; i < size; i++) {
@@ -24,6 +26,7 @@ private:
         size = newsize;
     }
 
+    // Template function definition
     void set(int index, T value) {
         if (index < 0) {
             return;
@@ -52,13 +55,21 @@ public:
     }
 
     T pop() {
-        if (last_element >= 0)
+        if (last_element >= 0) {
             return storage[last_element--];
+        }
+        else {
+            throw std::out_of_range("Popping from an empty MyVector");
+        }
     }
 
     T get(int index) {
         if (0 <= index && index <= last_element) {
             return storage[index];
+        }
+        else {
+            throw std::out_of_range("Index " + std::to_string(index) +
+                                    " is out of bounds [0, " + std::to_string(last_element) + "]");
         }
     }
 };

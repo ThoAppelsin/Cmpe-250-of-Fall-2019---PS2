@@ -45,13 +45,15 @@ void main2() {
 void main3(int);
 
 int main() {
+//    std::vector<int> a{};
+//    std::cout << a.at(5) << std::endl;
+
     MyVector<Student *> vec{};
     vec.append(new Student{"Utkan", 26});
     vec.append(new Student{"Ayse", 20});
 
     std::cout << (*vec.get(0)).age << ' '
-        << vec.pop()->age<< ' '
-        << vec.get(0)->age << std::endl;
+        << vec.get(4)->age << std::endl;
 
     return 0;
 }
