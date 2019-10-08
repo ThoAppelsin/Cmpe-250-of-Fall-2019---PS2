@@ -27,7 +27,7 @@ private:
     }
 
     // Template function definition
-    void set(int index, T value) {
+    void set(int index, const T& value) {
         if (index < 0) {
             return;
         }
@@ -50,7 +50,7 @@ public:
         storage = new T[size];
     }
 
-    void append(T value) {
+    void append(const T& value) {
         set(last_element + 1, value);
     }
 
