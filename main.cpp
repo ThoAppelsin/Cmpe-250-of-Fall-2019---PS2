@@ -48,13 +48,15 @@ int main() {
 //    std::vector<int> a{};
 //    std::cout << a.at(5) << std::endl;
 
-    MyVector<Student> vec{};
-    vec.append(Student{"Utkan", 26});
-    vec.append(Student{"Ayse", 20});
+    {
+        MyVector<Student> vec{};
+        vec.append(Student{"Utkan", 26});
+        vec.append(Student{"Ayse", 20});
 
-    std::cout << vec.get(0).age << std::endl
-        << vec.get(4).age << std::endl;
-
+        std::cout << vec.get(0).age << std::endl
+                  << vec.get(1).age << std::endl;
+    }
+    
     return 0;
 }
 

@@ -50,6 +50,10 @@ public:
         storage = new T[size];
     }
 
+    ~MyVector() {
+        delete[] storage;
+    }
+
     void append(const T& value) {
         set(last_element + 1, value);
     }
